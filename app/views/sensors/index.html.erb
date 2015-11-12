@@ -1,0 +1,41 @@
+<% content_for(:page_header) do %>
+  <%= "List of sensors" %>
+<% end %>
+<% content_for :panel_heading do %>Content<% end %>
+
+
+<p id="notice"><%= notice %></p>
+
+<table id="sensors" class="display table" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Kind</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensors.each do |sensor| %>
+      <tr>
+        <td><%= sensor.name %></td>
+        <td><%= sensor.description.truncate(50) %></td>
+        <td><%= sensor.kind %></td>
+        <td class="action-buttons">
+          <%= link_to 'Show', sensor, class: 'btn btn-success' %>
+          <%= link_to 'Edit', edit_sensor_path(sensor), class: 'btn btn-primary' %>
+          <%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% content_for(:extra_scripts) do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#sensors').DataTable({ responsive: true });
+    });
+  </script>
+<% end %>

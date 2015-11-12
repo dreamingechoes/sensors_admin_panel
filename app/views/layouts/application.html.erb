@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Sensors Admin Panel" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sensors Admin Panel" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
-  </body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= content_for?(:title) ? yield(:title) : "Sensors Admin Panel" %>
+  </title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sensors Admin Panel" %>">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id="wrapper" class="">
+    <%= render 'layouts/navbar' %>
+  </div>
+
+  <div id="page-wrapper">
+    <%= render 'layouts/title' %>
+    <%= render 'layouts/messages' %>
+
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= content_for?(:panel_heading) ? yield(:panel_heading) : "Dashboard" %>
+        </div>
+        <div class="panel-body">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= content_for?(:extra_scripts) ? yield(:extra_scripts) : nil %>
 </html>

@@ -1,0 +1,29 @@
+<%= form_for(@sensor) do |f| %>
+  <% if @sensor.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@sensor.errors.count, "error") %> prohibited this sensor from being saved:</h3>
+
+      <ul>
+      <% @sensor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Enter sensor name...', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Enter sensor description...', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :kind %><br>
+    <%= f.select :kind, Sensor::KINDS, { prompt: 'Select a kind' }, { required: true, class: 'form-control' } %>
+  </div>
+  <div class="form-group actions">
+    <%= f.submit 'Submit', :class => 'btn btn-lg btn-success btn-block' %>
+  </div>
+<% end %>

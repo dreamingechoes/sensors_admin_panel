@@ -1,0 +1,48 @@
+<% content_for(:page_header) do %>
+  <%= "Sensor detail" %>
+<% end %>
+<% content_for :panel_heading do %><%= @sensor.name %><% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sensor.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sensor.description %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= Sensor::KINDS[@sensor.kind][0] %>
+</p>
+
+<% unless @sensor_measures.blank? %>
+  <div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Sensor Evolution
+      </div>
+      <div class="panel-body">
+        <div id="sensor-evolution" style="height: 250px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <% content_for(:extra_scripts) do %>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        new Morris.Area({
+          element: 'sensor-evolution',
+          data: <%= raw @sensor_measures.to_json %>,
+          xkey: 'time',
+          ykeys: ['value'],
+          labels: ['Value'],
+          pointSize: 2,
+          resize: true
+        });
+      });
+    </script>
+  <% end %>
+<% end %>

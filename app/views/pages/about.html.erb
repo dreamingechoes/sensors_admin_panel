@@ -1,7 +1,14 @@
-<% content_for :title do %>About<% end %>
+<% content_for(:page_header) do %>
+  <%= "About" %>
+<% end %>
+<% content_for :panel_heading do %>About<% end %>
+
 <h3>About the Website</h3>
 <p>
 This web application was created with
 <%= link_to('Rails Composer', 'http://railsapps.github.io/rails-composer/') %>
 from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
+</p>
+<p>
+  Is a simple admin panel for manage sensor values created via the application API from any Arduino board connected to the internet via ethernet.
 </p>

@@ -1,0 +1,6 @@
+<% content_for(:page_header) do %>
+  Edit sensor
+<% end %>
+<% content_for :panel_heading do %><%= @sensor.name %><% end %>
+
+<%= render 'form' %>
