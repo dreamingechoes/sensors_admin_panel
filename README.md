@@ -42,7 +42,6 @@ user@computer:~$ git clone git@github.com:dreamingechoes/sensors_admin_panel.git
 user@computer:~$ cd sensors_admin_panel
 user@computer:/sensors_admin_panel$ bundle install
 user@computer:/sensors_admin_panel$ rake db:setup
-user@computer:/sensors_admin_panel$ rake db:seed
 ```
 
 * When all this finish, you're ready to launch the app!
