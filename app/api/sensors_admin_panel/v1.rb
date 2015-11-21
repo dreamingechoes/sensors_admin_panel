@@ -49,6 +49,7 @@ module SensorsAdminPanel
     end
 
     mount Sensor
+    mount Measure
 
     add_swagger_documentation(
       api_version: "v1",
