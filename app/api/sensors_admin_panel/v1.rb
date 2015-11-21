@@ -3,10 +3,7 @@ require 'grape-swagger'
 module SensorsAdminPanel
   class V1 < Grape::API
     version 'v1', using: :path, vendor: 'sensors_admin_panel'
-    # Specific content type to set UTF-8 and avoid codification problems
-    content_type :json, 'application/json; charset=UTF-8'
     prefix :api
-    format :json
 
     before do
       header['Access-Control-Allow-Origin'] = '*'

@@ -12,7 +12,7 @@ module SensorsAdminPanel
       end
 
       params :value do
-        optional :attributes, type: Integer, default: nil,
+        optional :value, type: Integer, default: nil,
         documentation: {
           type: 'Integer',
           desc: 'Value of measure'
