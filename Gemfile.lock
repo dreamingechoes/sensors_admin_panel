@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:dreamingechoes/bootstrap_sb_admin_base_v2.git
+  revision: 7b75624edb2835609a3254a49fb1666f881dbff6
+  branch: fix/font-awesome-bug
+  specs:
+    bootstrap_sb_admin_base_v2 (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,7 +61,6 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
-    bootstrap_sb_admin_base_v2 (0.1.1)
     builder (3.2.2)
     byebug (8.2.0)
     coderay (1.1.0)
@@ -230,7 +236,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootstrap-sass
-  bootstrap_sb_admin_base_v2
+  bootstrap_sb_admin_base_v2!
   byebug
   coffee-rails (~> 4.1.0)
   devise
