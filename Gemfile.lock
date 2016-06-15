@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/dreamingechoes/bootstrap_sb_admin_base_v2.git
+  revision: bc77eb589d74aeacd4fbde15470905a828433f11
+  branch: fix/font-asset-url
+  specs:
+    bootstrap_sb_admin_base_v2 (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -53,7 +60,6 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap_sb_admin_base_v2 (0.2.0)
     builder (3.2.2)
     byebug (9.0.5)
     coderay (1.1.1)
@@ -233,7 +239,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootstrap-sass
-  bootstrap_sb_admin_base_v2
+  bootstrap_sb_admin_base_v2!
   byebug
   coffee-rails (~> 4.1.0)
   devise
