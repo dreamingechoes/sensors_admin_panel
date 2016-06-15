@@ -14,8 +14,7 @@ gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'thin'
 gem 'seed_dump'
-gem 'bootstrap_sb_admin_base_v2', git: 'git@github.com:dreamingechoes/bootstrap_sb_admin_base_v2.git',
-                                  branch: 'fix/font-awesome-bug'
+gem 'bootstrap_sb_admin_base_v2'
 
 # API Stuff
 gem 'grape'
